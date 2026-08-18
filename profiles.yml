@@ -1,0 +1,12 @@
+product_dbt_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: 'not needed'
+      user: 'not needed'
+      role: ACCOUNTADMIN
+      database: DBT_DEMO
+      schema: DBT_DEV
+      warehouse: COMPUTE_WH
+      threads: 4
