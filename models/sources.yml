@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw product data ingested from upstream systems.
+    database: DBT_DEMO
+    schema: RAW
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+    loaded_at_field: _LOADED_AT
+    tables:
+      - name: RAW_PRODUCTS
+        description: Raw product records including pricing, quantity, and discount information.
